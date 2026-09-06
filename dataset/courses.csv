@@ -1,0 +1,6 @@
+course_id,course_name,domain,difficulty,skills,duration,instructor,avg_rating
+C001,Python Programming,CS,Beginner,python basics,6 weeks,Dr. Pallavi Mishra,4.5
+C002,Data Structures,CS,Intermediate,arrays trees graphs,8 weeks,Prof. R. Sharma,4.6
+C003,Machine Learning,AI,Intermediate,python ml scikit-learn,10 weeks,Dr. Krishna Madhuri,4.8
+C004,Deep Learning,AI,Advanced,neural networks pytorch,12 weeks,Dr. Krishna Madhuri,4.7
+C005,Computer Vision,AI,Advanced,opencv cnn image processing,8 weeks,Dr. A. Verma,4.6

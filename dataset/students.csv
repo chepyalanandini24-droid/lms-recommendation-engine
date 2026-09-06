@@ -1,0 +1,11 @@
+student_id,department,cgpa,interests,previously_completed_courses
+S001,ECE,8.78,Data Science,C003
+S002,Data Science,7.5,Web Development,C001
+S003,Data Science,9.53,AI,C002;C001
+S004,ECE,7.73,Cloud,C001;C002
+S005,Data Science,7.86,AI,C002
+S006,Data Science,7.57,Data Science,C001;C003
+S007,AI,6.68,Cloud,C003
+S008,ECE,9.3,Cloud,C003
+S009,CSE,7.17,Data Science,C003
+S010,Data Science,7.12,Data Science,C002
