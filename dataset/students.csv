@@ -9,3 +9,27 @@ S007,AI,6.68,Cloud,C003
 S008,ECE,9.3,Cloud,C003
 S009,CSE,7.17,Data Science,C003
 S010,Data Science,7.12,Data Science,C002
+S106,AI,8.7,Machine Learning,C101|C103
+S107,CSE,7.9,Web Development,C102|C105
+S108,ECE,8.2,Embedded Systems,C104
+S109,Data Science,9.3,Data Analytics,C101|C102|C106
+S110,AI,8.5,Deep Learning,C101|C107
+S111,CSE,7.4,Cyber Security,C105|C108
+S112,IT,8.1,Cloud Computing,C102|C109
+S113,AI,9.0,Computer Vision,C101|C103|C110
+S114,ECE,8.8,IoT,C104|C106
+S115,CSE,9.1,Full Stack,C102|C105|C107S116,AI,8.4,Generative AI,C101|C107|C110
+S117,CSE,9.2,Full Stack,C102|C105|C108
+S118,Data Science,8.6,Data Analytics,C101|C106|C109
+S119,ECE,7.8,Robotics,C103|C104
+S120,IT,8.9,Cloud Computing,C102|C109|C111
+S121,AI,9.5,Deep Learning,C101|C103|C107
+S122,CSE,7.6,Cyber Security,C105|C108
+S123,ECE,8.1,Embedded Systems,C104|C106
+S124,Data Science,9.0,Machine Learning,C101|C103|C106
+S125,IT,8.3,Web Development,C102|C105
+S126,AI,8.8,Computer Vision,C101|C107|C110
+S127,CSE,9.4,Full Stack,C102|C105|C108|C112
+S128,ECE,7.9,IoT,C104|C106
+S129,Data Science,8.5,Data Analytics,C101|C106
+S130,AI,9.1,Generative AI,C101|C107|C110|C111
