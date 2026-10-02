@@ -1,14 +1,9 @@
 student_id,department,cgpa,interests,previously_completed_courses
-S001,ECE,8.78,Data Science,C003
-S002,Data Science,7.5,Web Development,C001
-S003,Data Science,9.53,AI,C002;C001
-S004,ECE,7.73,Cloud,C001;C002
-S005,Data Science,7.86,AI,C002
-S006,Data Science,7.57,Data Science,C001;C003
-S007,AI,6.68,Cloud,C003
-S008,ECE,9.3,Cloud,C003
-S009,CSE,7.17,Data Science,C003
-S010,Data Science,7.12,Data Science,C002
+S101,CSE,8.9,AI,C101|C102
+S102,ECE,7.8,Robotics,C103
+S103,AI,9.1,Machine Learning,C101|C104
+S104,IT,8.2,Web Development,C102|C105
+S105,Data Science,8.6,Data Analytics,C101|C106
 S106,AI,8.7,Machine Learning,C101|C103
 S107,CSE,7.9,Web Development,C102|C105
 S108,ECE,8.2,Embedded Systems,C104
@@ -34,3 +29,23 @@ S127,CSE,9.4,Full Stack,C102|C105|C108|C112
 S128,ECE,7.9,IoT,C104|C106
 S129,Data Science,8.5,Data Analytics,C101|C106
 S130,AI,9.1,Generative AI,C101|C107|C110|C111
+S131,CSE,8.0,Web Development,C102|C105
+S132,AI,9.3,Machine Learning,C101|C106|C107
+S133,Data Science,8.7,Data Analytics,C105|C106
+S134,IT,7.9,Cloud Computing,C102|C109
+S135,ECE,8.4,Robotics,C103|C104
+S136,AI,8.9,Deep Learning,C101|C107
+S137,CSE,9.0,Full Stack,C102|C105|C108
+S138,Data Science,9.2,Machine Learning,C101|C103|C106
+S139,ECE,7.7,Embedded Systems,C104
+S140,IT,8.5,Cyber Security,C108|C109
+S141,AI,9.6,Generative AI,C101|C107|C110|C111
+S142,CSE,8.3,Web Development,C102|C105
+S143,Data Science,8.8,Data Analytics,C101|C106
+S144,ECE,8.0,IoT,C104|C106|C112
+S145,AI,8.7,Computer Vision,C101|C103|C110
+S146,IT,9.1,Cloud Computing,C102|C109|C111
+S147,CSE,7.8,Cyber Security,C105|C108
+S148,Data Science,9.4,Machine Learning,C101|C106|C107
+S149,AI,8.6,Generative AI,C101|C111
+S150,ECE,8.2,Robotics,C103|C104|C112
