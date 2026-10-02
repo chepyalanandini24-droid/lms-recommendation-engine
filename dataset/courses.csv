@@ -1,6 +1,13 @@
-course_id,course_name,domain,difficulty,skills,duration,instructor,avg_rating
-C001,Python Programming,CS,Beginner,python basics,6 weeks,Dr. Pallavi Mishra,4.5
-C002,Data Structures,CS,Intermediate,arrays trees graphs,8 weeks,Prof. R. Sharma,4.6
-C003,Machine Learning,AI,Intermediate,python ml scikit-learn,10 weeks,Dr. Krishna Madhuri,4.8
-C004,Deep Learning,AI,Advanced,neural networks pytorch,12 weeks,Dr. Krishna Madhuri,4.7
-C005,Computer Vision,AI,Advanced,opencv cnn image processing,8 weeks,Dr. A. Verma,4.6
+course_id,course_name,domain,difficulty,rating,num_reviews
+C101,Introduction to Artificial Intelligence,AI,Beginner,4.8,1250
+C102,Full Stack Web Development BootCamp,Web Development,Intermediate,4.7,980
+C103,Robotics & Automation Fundamentals,Robotics,Beginner,4.5,620
+C104,Embedded Systems Architecture,Embedded Systems,Intermediate,4.6,510
+C105,Data Analytics and Visualization,Data Science,Beginner,4.8,1400
+C106,Machine Learning Mastery,AI,Intermediate,4.9,2100
+C107,Deep Learning & Neural Networks,AI,Advanced,4.8,890
+C108,Cyber Security Essentials,Cyber Security,Beginner,4.6,730
+C109,AWS Cloud Computing Architect,Cloud Computing,Intermediate,4.7,1120
+C110,Computer Vision with OpenCV,AI,Advanced,4.9,940
+C111,Generative AI & LLM Engineering,AI,Advanced,4.9,1850
+C112,Internet of Things (IoT) Systems,IoT,Intermediate,4.5,430
