@@ -1,13 +1,13 @@
-course_id,course_name,domain,skills,difficulty,rating,num_reviews
-C101,Introduction to Artificial Intelligence,AI,Python Machine Learning Neural Networks,Beginner,4.8,1250
-C102,Full Stack Web Development BootCamp,Web Development,HTML CSS JavaScript React Node,Intermediate,4.7,980
-C103,Robotics & Automation Fundamentals,Robotics,ROS Control Systems Sensors,Beginner,4.5,620
-C104,Embedded Systems Architecture,Embedded Systems,C Microcontrollers RTOS,Intermediate,4.6,510
-C105,Data Analytics and Visualization,Data Science,SQL Pandas PowerBI Tableau,Beginner,4.8,1400
-C106,Machine Learning Mastery,AI,Scikit-Learn Python Regression Classification,Intermediate,4.9,2100
-C107,Deep Learning & Neural Networks,AI,PyTorch TensorFlow CNN RNN,Advanced,4.8,890
-C108,Cyber Security Essentials,Cyber Security,Networking Cryptography Ethical Hacking,Beginner,4.6,730
-C109,AWS Cloud Computing Architect,Cloud Computing,AWS EC2 S3 Cloudflare Docker,Intermediate,4.7,1120
-C110,Computer Vision with OpenCV,AI,OpenCV Image Processing Feature Extraction,Advanced,4.9,940
-C111,Generative AI & LLM Engineering,AI,LLMs Prompt Engineering RAG LangChain,Advanced,4.9,1850
-C112,Internet of Things (IoT) Systems,IoT,Arduino Raspberry Pi MQTT Sensors,Intermediate,4.5,430
+course_id,course_name,domain,skills,difficulty,rating,avg_rating,num_reviews
+C101,Introduction to Artificial Intelligence,AI,Python Machine Learning Neural Networks,Beginner,4.8,4.8,1250
+C102,Full Stack Web Development BootCamp,Web Development,HTML CSS JavaScript React Node,Intermediate,4.7,4.7,980
+C103,Robotics & Automation Fundamentals,Robotics,ROS Control Systems Sensors,Beginner,4.5,4.5,620
+C104,Embedded Systems Architecture,Embedded Systems,C Microcontrollers RTOS,Intermediate,4.6,4.6,510
+C105,Data Analytics and Visualization,Data Science,SQL Pandas PowerBI Tableau,Beginner,4.8,4.8,1400
+C106,Machine Learning Mastery,AI,Scikit-Learn Python Regression Classification,Intermediate,4.9,4.9,2100
+C107,Deep Learning & Neural Networks,AI,PyTorch TensorFlow CNN RNN,Advanced,4.8,4.8,890
+C108,Cyber Security Essentials,Cyber Security,Networking Cryptography Ethical Hacking,Beginner,4.6,4.6,730
+C109,AWS Cloud Computing Architect,Cloud Computing,AWS EC2 S3 Cloudflare Docker,Intermediate,4.7,4.7,1120
+C110,Computer Vision with OpenCV,AI,OpenCV Image Processing Feature Extraction,Advanced,4.9,4.9,940
+C111,Generative AI & LLM Engineering,AI,LLMs Prompt Engineering RAG LangChain,Advanced,4.9,4.9,1850
+C112,Internet of Things (IoT) Systems,IoT,Arduino Raspberry Pi MQTT Sensors,Intermediate,4.5,4.5,430
