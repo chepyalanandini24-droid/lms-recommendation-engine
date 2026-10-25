@@ -107,14 +107,64 @@ with tab4:
 
 # TAB 5: STUDENT FEEDBACK
 with tab5:
-    st.subheader("💬 Course Discussion & Student Reviews")
+    st.subheader("💬 Course Ratings, Reviews & Discussions")
     
     # Select course for viewing/adding comments
     selected_course_for_comments = st.selectbox(
-        "Select a course to join the discussion:", 
+        "Select a course to view or review:", 
         courses_df['course_name'].unique(),
         key="comment_course_select"
     )
+    
+    # Load Comments Dataset Safely
+    comments_path = "dataset/comments.csv"
+    if os.path.exists(comments_path):
+        comments_df = pd.read_csv(comments_path)
+        if 'rating' not in comments_df.columns:
+            comments_df['rating'] = 5  # Fallback if rating column is missing
+    else:
+        comments_df = pd.DataFrame(columns=["comment_id", "student_id", "course_name", "rating", "comment_text", "timestamp"])
+
+    # Filter comments for the selected course
+    course_comments = comments_df[comments_df['course_name'] == selected_course_for_comments]
+
+    st.markdown("### 🗣️ Existing Student Reviews & Ratings")
+    if not course_comments.empty:
+        for index, row in course_comments.iterrows():
+            stars = "⭐" * int(row.get('rating', 5))
+            st.markdown(f"> **{row['student_id']}** - {stars} _({row['timestamp']})_:\n> {row['comment_text']}")
+            st.markdown("---")
+    else:
+        st.info("No reviews yet for this course. Be the first to rate and review!")
+
+    # --- Comment & Rating Submission Form ---
+    with st.form(key="comment_form", clear_on_submit=True):
+        st.markdown("### ✍️ Leave Your Rating & Review")
+        user_rating = st.slider("Course Rating (1 to 5 Stars)", 1, 5, 5)
+        user_comment = st.text_area("Write your review or question here:")
+        submit_button = st.form_submit_button(label="Submit Review")
+        
+        if submit_button:
+            if user_comment.strip() != "":
+                new_comment_id = f"C{len(comments_df) + 101}"
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                new_row = pd.DataFrame([{
+                    "comment_id": new_comment_id,
+                    "student_id": selected_student_id,  # Uses student selected in sidebar
+                    "course_name": selected_course_for_comments,
+                    "rating": user_rating,
+                    "comment_text": user_comment,
+                    "timestamp": current_time
+                }])
+                
+                comments_df = pd.concat([comments_df, new_row], ignore_index=True)
+                comments_df.to_csv(comments_path, index=False)
+                
+                st.success("Review and rating submitted successfully!")
+                st.rerun()
+            else:
+                st.warning("Review text cannot be empty.")
     # TAB 6: EXTERNAL OPPORTUNITIES & HACKATHONS
 with tab6:
     st.subheader("🌍 External Academic Programs & Hackathons")
