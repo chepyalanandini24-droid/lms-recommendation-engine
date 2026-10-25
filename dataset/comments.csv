@@ -1,3 +1,3 @@
-comment_id,student_id,course_name,comment_text,timestamp
-CML1,S101,Machine Learning Mastery,This course helped me understand scikit-learn algorithms very clearly!,2026-10-24 10:30:00
-CML2,S103,Generative AI & LLM Engineering,Great explanations on RAG and prompt engineering.,2026-10-25 14:15:00
+comment_id,student_id,course_name,rating,comment_text,timestamp
+CML1,S101,Machine Learning Mastery,5,This course helped me understand scikit-learn algorithms very clearly!,2026-10-24 10:30:00
+CML2,S103,Generative AI & LLM Engineering,5,Great explanations on RAG and prompt engineering.,2026-10-25 14:15:00
