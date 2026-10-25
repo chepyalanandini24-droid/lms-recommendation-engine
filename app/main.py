@@ -1,6 +1,3 @@
-import sys
-import os
-from datetime import datetime
 import streamlit as st
 import pandas as pd
 from recommendation import (
@@ -9,6 +6,8 @@ from recommendation import (
     content_based_recommendations,
     hybrid_recommendations
 )
+from datetime import datetime
+import os
 
 # Set Page Config
 st.set_page_config(page_title="AI LMS Recommendation Engine", layout="wide")
