@@ -137,11 +137,11 @@ with tab5:
     else:
         st.info("No reviews yet for this course. Be the first to rate and review!")
 
-    # --- Comment & Rating Submission Form ---
-    with st.form(key="comment_form", clear_on_submit=True):
+    # --- Comment & Rating Submission Form (Using Dynamic Unique Keys) ---
+    with st.form(key=f"comment_form_{selected_course_for_comments}", clear_on_submit=True):
         st.markdown("### ✍️ Leave Your Rating & Review")
-        user_rating = st.slider("Course Rating (1 to 5 Stars)", 1, 5, 5)
-        user_comment = st.text_area("Write your review or question here:")
+        user_rating = st.slider("Course Rating (1 to 5 Stars)", 1, 5, 5, key=f"rating_slider_{selected_course_for_comments}")
+        user_comment = st.text_area("Write your review or question here:", key=f"comment_text_{selected_course_for_comments}")
         submit_button = st.form_submit_button(label="Submit Review")
         
         if submit_button:
