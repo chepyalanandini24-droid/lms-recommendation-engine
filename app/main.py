@@ -1,7 +1,6 @@
 import sys
 import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__),'..')))
-
+from datetime import datetime
 import streamlit as st
 import pandas as pd
 from recommendation import (
@@ -108,8 +107,57 @@ with tab4:
 
 # TAB 5: STUDENT FEEDBACK
 with tab5:
-    st.subheader("Submit Course Feedback")
-    selected_course = st.selectbox("Select Course", courses_df['course_name'].unique())
-    user_rating = st.slider("Rating (1 to 5)", 1, 5, 4)
-    if st.button("Submit Feedback"):
-        st.success(f"Feedback submitted for {selected_course}! Rating: {user_rating} Stars")
+    st.subheader("💬 Course Discussion & Student Reviews")
+    
+    # Select course for viewing/adding comments
+    selected_course_for_comments = st.selectbox(
+        "Select a course to join the discussion:", 
+        courses_df['course_name'].unique(),
+        key="comment_course_select"
+    )
+    
+    # Load Comments Dataset Safely
+    comments_path = "dataset/comments.csv"
+    if os.path.exists(comments_path):
+        comments_df = pd.read_csv(comments_path)
+    else:
+        comments_df = pd.DataFrame(columns=["comment_id", "student_id", "course_name", "comment_text", "timestamp"])
+
+    # Filter comments for the selected course
+    course_comments = comments_df[comments_df['course_name'] == selected_course_for_comments]
+
+    st.markdown("### 🗣️ Existing Peer Discussions")
+    if not course_comments.empty:
+        for index, row in course_comments.iterrows():
+            st.markdown(f"> **{row['student_id']}** _({row['timestamp']})_:\n> {row['comment_text']}")
+            st.markdown("---")
+    else:
+        st.info("No comments yet for this course. Be the first to share your thoughts!")
+
+    # --- Comment Submission Form ---
+    with st.form(key="comment_form", clear_on_submit=True):
+        st.markdown("### ✍️ Post a Review or Question")
+        user_comment = st.text_area("Write your comment or review here:")
+        submit_button = st.form_submit_button(label="Post Comment")
+        
+        if submit_button:
+            if user_comment.strip() != "":
+                new_comment_id = f"C{len(comments_df) + 101}"
+                current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                
+                new_row = pd.DataFrame([{
+                    "comment_id": new_comment_id,
+                    "student_id": selected_student_id,  # Automatically uses the student selected in sidebar
+                    "course_name": selected_course_for_comments,
+                    "comment_text": user_comment,
+                    "timestamp": current_time
+                }])
+                
+                comments_df = pd.concat([comments_df, new_row], ignore_index=True)
+                comments_df.to_csv(comments_path, index=False)
+                
+                st.success("Comment posted successfully!")
+                st.rerun()
+            else:
+                st.warning("Comment cannot be empty.")
+
