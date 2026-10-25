@@ -35,13 +35,14 @@ st.sidebar.write(f"**Completed Courses:** {completed_courses}")
 # --- MAIN DASHBOARD ---
 st.title("🎓 AI-Based LMS Course Recommendation Engine")
 
-# Navigation Tabs
-tab1, tab2, tab3, tab4, tab5 = st.tabs([
+# Navigation Tabs (Expanded to 6 Tabs)
+tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
     "🎯 Hybrid & Personalized", 
     "🔥 Popularity", 
     "📊 Student Activity & Progress",
     "🔍 Search & Catalog", 
-    "💬 Student Feedback"
+    "💬 Student Feedback",
+    "🌍 External Opportunities"
 ])
 
 # TAB 1: HYBRID & PERSONALIZED
@@ -114,6 +115,41 @@ with tab5:
         courses_df['course_name'].unique(),
         key="comment_course_select"
     )
+    # TAB 6: EXTERNAL OPPORTUNITIES & HACKATHONS
+with tab6:
+    st.subheader("🌍 External Academic Programs & Hackathons")
+    st.markdown("Boost your resume with curated external hackathons, research opportunities, and professional certifications tailored to your skills.")
+    
+    # Load External Programs Dataset
+    ext_path = "dataset/external_programs.csv"
+    if os.path.exists(ext_path):
+        ext_df = pd.read_csv(ext_path)
+        
+        # Smart Filtering: Match programs where required skills overlap with student interests
+        student_interest = student_info['interests'].lower()
+        
+        # Filter matching programs or show all if no exact keyword match
+        matched_ext = ext_df[
+            ext_df['skills_required'].str.lower().apply(lambda x: any(word in x for word in student_interest.split()))
+        ]
+        
+        if matched_ext.empty:
+            matched_ext = ext_df  # Fallback to show all if no direct overlap
+            
+        st.markdown(f"### Recommended Opportunities for {selected_student_id} (Interest: _{student_info['interests']}_)")
+        st.dataframe(matched_ext, width="stretch")
+        
+        st.markdown("---")
+        st.markdown("### 📝 Register / Apply for Programs")
+        selected_program = st.selectbox("Select a program to view details:", ext_df['program_name'].unique())
+        
+        prog_details = ext_df[ext_df['program_name'] == selected_program].iloc[0]
+        st.info(f"**Category:** {prog_details['category']} | **Mode:** {prog_details['mode']} | **Status/Link:** {prog_details['deadline_or_link']}")
+        
+        if st.button("Express Interest / Apply"):
+            st.success(f"Successfully registered student {selected_student_id} for {selected_program}! Confirmation email simulated.")
+    else:
+        st.warning("External programs dataset not found.")
     
     # Load Comments Dataset Safely
     comments_path = "dataset/comments.csv"
